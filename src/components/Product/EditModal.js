@@ -40,7 +40,7 @@ export default function EditModal(data) {
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLabel">
-              {data.data._id}
+              {data.data?._id}
             </h5>
             <button
               className="close"
@@ -57,7 +57,7 @@ export default function EditModal(data) {
                 type="text"
                 className="form-control form-control-user"
                 aria-describedby="emailHelp"
-                placeholder={data.data.name}
+                placeholder={data.data?.name}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
@@ -66,7 +66,7 @@ export default function EditModal(data) {
                 type="text"
                 className="form-control form-control-user"
                 aria-describedby="emailHelp"
-                placeholder={data.data.price}
+                placeholder={data.data?.price}
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
@@ -75,7 +75,7 @@ export default function EditModal(data) {
                 type="text"
                 className="form-control form-control-user"
                 aria-describedby="emailHelp"
-                placeholder={data.data.description}
+                placeholder={data.data?.description}
                 onChange={(e) => setDes(e.target.value)}
               />
             </div>

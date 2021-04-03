@@ -64,7 +64,9 @@ export default class Product extends Component {
     const paginate = (pageNumber) => this.setState({currentPage: pageNumber});
 
     const requiredItem = this.state.requiredItem;
-    let modalData = this.state.list[requiredItem];
+    let modalData = this.state.keyword
+      ? li[requiredItem]
+      : currentPosts[requiredItem];
     return (
       <div className="container-fluid">
         {this.state.loading || !this.state.list ? (
@@ -156,7 +158,7 @@ export default class Product extends Component {
                     totalPosts={this.state.list.length}
                     paginate={paginate}
                   />
-                  <DeleteModal id={modalData._id} />
+                  <DeleteModal id={modalData?._id} />
                   <EditModal data={modalData} />
                   <AddModal />
                 </div>
