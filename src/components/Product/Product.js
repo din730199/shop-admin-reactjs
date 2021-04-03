@@ -81,18 +81,13 @@ export default class Product extends Component {
                       <input
                         type="text"
                         className="form-control bg-light  small"
-                        placeholder="Search for..."
+                        placeholder="Tìm kiếm..."
                         aria-label="Search"
                         aria-describedby="basic-addon2"
                         onChange={(e) =>
                           this.setState({keyword: e.target.value})
                         }
                       />
-                      <div className="input-group-append">
-                        <button className="btn btn-info" type="button">
-                          <i className="fas fa-search fa-sm"></i>
-                        </button>
-                      </div>
                     </div>
                   </form>
                   <div className="ml-auto mr-3">
