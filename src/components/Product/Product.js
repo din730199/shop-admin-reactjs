@@ -98,7 +98,8 @@ export default class Product extends Component {
                       data-toggle="modal"
                       data-target="#addModal"
                     >
-                      Thêm
+                      <i class="fas fa-plus mr-2"></i>
+                      <span>Thêm</span>
                     </button>
                   </div>
                 </div>
@@ -111,7 +112,7 @@ export default class Product extends Component {
                     id="dataTable"
                     width="100%"
                   >
-                    <thead>
+                    <thead class="bg-info text-white">
                       <tr>
                         <th>Tên sản phẩm</th>
                         <th>Loại sản phẩm</th>
@@ -128,24 +129,20 @@ export default class Product extends Component {
                               <td>{i.name}</td>
                               <td>{i.productType.name}</td>
                               <td>{this.currencyFormat(i.price)}</td>
-                              <td>{i.description}</td>
-                              <td>
+                              <td className="w-50">{i.description}</td>
+                              <td className="mx-auto">
                                 <button
-                                  className="btn btn-info mb-1"
+                                  className="fas fa-pen font-weight-bold btn btn-info mr-2"
                                   data-toggle="modal"
                                   data-target="#editModal"
                                   onClick={() => this.replaceModalItem(index)}
-                                >
-                                  Sửa
-                                </button>
+                                ></button>
                                 <button
-                                  className="btn btn-danger mb-1"
+                                  className=" fas fa-trash-alt font-weight-bold btn btn-danger"
                                   data-toggle="modal"
                                   data-target="#deleteModal"
                                   onClick={() => this.replaceModalItem(index)}
-                                >
-                                  Xóa
-                                </button>
+                                ></button>
                               </td>
                             </tr>
                           );
