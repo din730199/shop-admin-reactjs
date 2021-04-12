@@ -7,6 +7,9 @@ export default function EditModal(data) {
   const [des, setDes] = useState();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('====================================');
+    console.log(name, price, des);
+    console.log('====================================');
     let response = await axios({
       url: `https://mainf-app.herokuapp.com/api/product/updateById/${data.data._id}`,
       method: 'PUT',

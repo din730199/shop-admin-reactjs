@@ -98,7 +98,7 @@ export default class Product extends Component {
                       data-toggle="modal"
                       data-target="#addModal"
                     >
-                      <i class="fas fa-plus mr-2"></i>
+                      <i className="fas fa-plus mr-2"></i>
                       <span>Thêm</span>
                     </button>
                   </div>
@@ -112,7 +112,7 @@ export default class Product extends Component {
                     id="dataTable"
                     width="100%"
                   >
-                    <thead class="bg-info text-white">
+                    <thead className="bg-info text-white">
                       <tr>
                         <th>Tên sản phẩm</th>
                         <th>Loại sản phẩm</th>

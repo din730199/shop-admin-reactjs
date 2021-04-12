@@ -89,7 +89,7 @@ export default class Bill extends Component {
                     width="100%"
                     cellSpacing="0"
                   >
-                    <thead class="bg-info text-white">
+                    <thead className="bg-info text-white">
                       <tr>
                         <th>Email khách hàng</th>
                         <th>Địa Chỉ nhận hàng</th>
