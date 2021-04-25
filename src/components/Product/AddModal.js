@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
 export default function AddModal() {
@@ -7,6 +7,20 @@ export default function AddModal() {
   const [price, setPrice] = useState();
   const [des, setDes] = useState();
   const [image, setImage] = useState([]);
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    const fetchList = async () => {
+      var response = await axios({
+        url: `https://mainf-app.herokuapp.com/api/productType/getListProductType`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      setList(response.data.data);
+    };
+    fetchList();
+  }, []);
 
   const handleSubmit = async (e) => {
     const data = new FormData();
@@ -76,12 +90,13 @@ export default function AddModal() {
                 id="inputGroupSelect02"
               >
                 <option value="">Chọn...</option>
-                <option value="5e820949b0c17b530873db31">Đầm nữ</option>
-                <option value="5e820969b0c17b530873db32">Áo sơmi</option>
-                <option value="5e82097fb0c17b530873db33">Áo thun</option>
-                <option value="5e820995b0c17b530873db34">Áo khoác</option>
-                <option value="605402cc95f39c279c750fdb">Giầy</option>
-                <option value="605402f395f39c279c750fdc">Quần</option>
+                {list.map((i) => {
+                  return (
+                    <option key={i._id} value={i._id}>
+                      {i.name}
+                    </option>
+                  );
+                })}
               </select>
               <div className="input-group-append">
                 <label className="input-group-text">Loại</label>
